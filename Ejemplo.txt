@@ -1,0 +1,25 @@
+Paso 1:
+  Entidades
+    Avión
+    Aerolinea
+    Ruta
+    Tripulante
+    Piloto
+    Aeropuerto
+    Pais
+    Ciudad
+    Pasajero
+
+Paso 2:
+
+
+          | Avion | Aerolinea | Ruta | Tripulante | Piloto | Aeropuerto | Pais | Ciudad | Pasajero |
+Avión     |   X   |    1-1    |   X  |     X      |   1-M  |    1-M     |  X   |   X    |     X    |
+Aerolinea |  1-M  |     X     |  1-M |    1-M     |   1-M  |    1-M     |  X   |   X    |    1-M   |
+Ruta      |   X   |    1-M    |   X  |     X      |    X   |    1-M     |  X   |   X    |    1-M   |
+Tripulante|   X   |    1-1    |   X  |     X      |    X   |     X      |  X   |   X    |     X    |
+Piloto    |  1-M  |    1-1    |   X  |     X      |    X   |     X      |  X   |   X    |     X    |
+Aeropuerto|  1-M  |    1-M    |  1-M |     X      |    X   |     X      |  X   |  1-1   |     X    |
+Pais      |   X   |     X     |   X  |     X      |    X   |     X      |  X   |  1-M   |     X    |
+Ciudad    |   X   |     X     |   X  |     X      |    X   |    0-M     | 1-1  |   X    |     X    |
+Pasajero  |   X   |    1-M    |  1-M |     X      |    X   |     X      |  X   |   X    |     X    |

@@ -1,0 +1,154 @@
+Las Bases de Datos se pueden dividir en:
+*Bases de Datos Relacionales
+*Bases de Datos no Relacionales
+
+
+Bases de Datos Relacionales empresariales (más importantes)
+*DB2
+*SQL Server
+*Oracle
+
+Algunas Bases de Datos Relacionales comunes:
+*MariaDB: Es una distribución de Bases de Datos que deriva de MySQL.
+*PostrgreSQL: Esta es una Base de Datos comunitaria pero tiene una versión entreprise que tiene soporte.
+
+Algunas Bases de Datos No Relacionales comunes:
+*Redis: Una Base de Datos que en la actualidad se trabaja mucho.
+*neo4j: Es una Base de Datos basada en nodos. Está centrada en grafos que nos va a permitir encontrar relaciones entre objetos. Muy común en eCommerce.
+*Cassandra: Es una Base de Datos muy importante del proyecto Apache. Trabaja con grandes volúmenes de datos.
+*MongoDB: Es una Base de Datos en NoSQL que se basa en trabajar en varias instancias.
+
+
+
+¿Qué es un dato?
+Un dato es algo que nos va a permitir describir un objeto. Ese objeto global lo vamos a poder llamar “Entidad”. Una entidad puede estar llena de datos.
+
+Existen 3 niveles de Abstracción en las Bases de Datos:
+*Conceptual: Se tiene que empezar a modelar una Base de Datos dependiendo de lo que se quiere hacer basado en los conceptos de “entidad” y “relación”.
+*Lógico: El diagrama lógico nos va a resolver ciertas dudas de consistencia, para evitar crear loops o evitar que tenga cosas que no tengan sentido en nuestro proyecto.
+*Físico: Es finalmente cómo lo va a ver la Base de Datos. Involucra los tipos de datos usados en cada sistema de DB.
+
+
+Igual que en cualquier lenguaje de programación, existen variables en las Bases de Datos:
+*Caracteres: Pueden ser desde letras hasta caracteres especiales.
+*Numérico: Del 0 al 9 pero con una longitud especial.
+*Varchar: Caracteres con un formato más variable.
+*Imagen
+*Fecha: Generalmente van acompañadas de una hora.
+*Moneda: esto facilita todo si se trabaja con diferentes denominaciones.
+*Texto: Variables que tienen mayor tamaño que un char o que un varchar.
+*Bit: Se puede trabajar con 1 y 0 o también con verdadero y falso.
+*Decimal
+
+Esquema = Es la estructura lógica que va a tener una Base de Datos.
+Instancia = Contenido de partículas que tiene una Base de Datos en un instante de tiempo.
+
+¿Qué debemos esperar para modelar una Base de Datos?
+*Los datos.
+*La relación que existe entre los datos.
+*Restricciones de los datos.
+
+Existen 3 cosas para poder hacer la descripción de una Base de Datos:
+*DML = Data Manipulation Language o Lenguaje de Manipulación de Datos.
+*DDL = Data Definition Language o Lenguaje de Definición de Datos.
+*SQL = Structured Query Language o Lenguaje de Consulta Estructurada.
+
+Otros tipos de Bases de Datos:
+*Bases de Datos Relacionales
+*Basadas en Objetos Relacionales
+*XML
+*NoSQL
+*In-Memory
+
+
+Características de Bases de Datos SQL:
+*Es un lenguaje estructurado.
+*Tiene un esquema de tablas.
+*Tiene integración con otros tipos de archivos.
+*Tiene indexación por medio de árboles.
+
+Características de Bases de Datos NoSQL:
+*Se puede trabajar con un lenguaje estructurado o con uno no estructurado.
+*Tiene diferente tipo de indexación. Se utiliza normalmente Json.
+*Tiene un crecimiento horizontal.
+*Ejemplos: MongoDB y Cassandra.
+
+Características de Bases de Datos Analíticas y de Bigdata:
+*Son de lenguaje no estructurado.
+*Tiene integración de muchos sistemas.
+*Tiene integración también a sistemas tradicionales y sistemas de engagement.
+*Principio “divide y vencerás”
+*Se basa en esquemas Scale Out.
+*Crecimiento horizontal.
+*Ejemplos: Spark, HORTONWORKS, hadoop
+
+Características de Bases de Datos basadas en aceleración:
+*Normalmente basadas in Memory.
+*Uso de aceleradores como GPU, flash cards, FPGAs.
+*Tienen estructuras diferentes, por ejemplo, basadas en nodos.
+*Uso frecuente de ambientes empresariales productivos y de datawarehouse.
+*Ejemplos: neo4j, redis, kinetica
+
+
+Entidad = Es una abstracción del mundo real.
+
+Barker = Aquí una entidad se representa como una caja, es una caja que va a tener atributos. Estos atributos van a poder ser obligatorios u opcionales.
+
+Recomendación:
+El formato para trabajar con los ID debe ser “number”. No siempre va a poder ser así, pero es lo más recomendable.
+
+
+
+Para definir una Relación tenemos que tener en cuenta los siguientes puntos:
+La obligatoriedad: Ésta se denota con una línea continua.
+Opcional: Se representa con una línea punteada.
+
+Datos importantes:
+El símbolo con el que representamos la característica “de uno a muchos” es con la llamada pata de gallo, que gráficamente es una línea continua con dos líneas en 45 grados en cada lado
+
+Tipos de relaciones:
+
+0 - 1 : La relacion es opcional, pero limitada a 1. Ejemplo, Pasaporte.
+1 - 1 : La relacion es obligatoria y limitada a 1. Ejemplo, Identifiacion.
+0 - M : La relacion es opcional y puede ser con muchas entidades. Ejemplo, Las personas que viven en una casa.
+1 - M : La relacion es obligatoria y puede ser con muchas entidades. Ejemplo, los colores de una casa.
+M - M : Puede ser tanto obligatoria como opcional.
+
+
+Capas de abstraccion:
+*Modelo Conceptual
+  Se determinan las entidades principales con las que contara la base de datos asi como sus relaciones.
+
+*Modelo Logico
+  Se destruye las relaciones muchoos a muchos y se remplazan con entidades debiles que tendra como llave las llaves primarias
+  de las dos entidades fuertes relacionadas, asi como tambien campos adicionales nuevos en esta entidad. 
+  Tambien se agregan los campos que tendra cada entiadad asi como su tipo generico de dato.
+
+*Modelo Fisico
+  Se remplazan los tipos genericos de datos por los especificos del manejador que se vaya a usar.
+
+
+
+MEtodologia de 9 pasos:
+
+*Paso 1:
+  Identificar Cuáles son las Entidades Resuelven Nuestro Problema. Hay que documentarse bien acerca del problema que se va a resolver.
+  Las entidades se deben identificar en singular.
+*Paso 2:
+  Identificar las relaciones entre las entidades.
+  Pueden existir entidades con releaciones a ellas mismas.
+
+*Paso 3:
+  Dibujar diagrama conceptual con las entidades y relaciones identificadas.
+*Paso 4:
+
+*Paso 5:
+  Identificar Cuáles son las Entidades Resuelven Nuestro Problema
+*Paso 6:
+
+*Paso 7:
+  Identificar Cuáles son las Entidades Resuelven Nuestro Problema
+*Paso 8:
+
+*Paso 9:
+  Identificar Cuáles son las Entidades Resuelven Nuestro Problema
