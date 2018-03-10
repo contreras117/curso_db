@@ -183,3 +183,15 @@ AV_marca     | varchar(10) |              |     |
   Pasar al estandar de la base de datos (SQL)
   Se escribe el codigo SQL para crear las tablas en el manejador de DB
   que vayamos a usar.
+
+
+
+
+*Atomicidad: Se asegura que hay un conjunto minimo de pasos para realizar una transaccion de manera exitosa. O se realizan todos o no se realiza ninguno. Si la transaccion falla antes de completar todos los pasos, se regresa todo a su estado original.
+*Consistencia: Asegura que si estoy en un estado valido al realizar una transaccion paso a otro estado valido.
+*Isolacion/Aislamiento: Aisla un dato para que no pueda ser modificado por otras transacciones concurrentes y asi asegurar la consistencia de los datos.
+*Durabilidad: Asegura que la transaccion una vez confirmada pueda perdurar en el tiempo, aunque el sistema falle.
+
+
+Las bases de datos columnares (por lo general son bases de datos in memory) a diferencia de las de arboles, recorren la tabla por columna, 
+por ejemplo la columna ID, hasta enconttar el resultado.
