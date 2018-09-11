@@ -1,0 +1,28 @@
+1ra Forma normal: cada atributo de la tabla tiene que tener el valor minimo posible.
+                                Implica que cada dato debe contener lo minimo posible. Es decir, que sean simples
+                                e indivisibles.
+                                Ejmplo: Dividir nombres y apellidos
+
+                                Para esta forma normal es requsito indispensable que la
+                                tabla tenga por lo menos una llave primaria.
+
+
+2da Forma normal: Se debe estar en 1ra FN y yodos los atributos que no sean clave primaria no deben depender
+                  de otros atributos que no sean claves.
+
+                  Ejemplo: El atributo ciudad depende del atributo "pais", por lo
+                           que se debe crear la tabla "ciudad" la cual a su vez estara
+                           relaciondad a tabla pais.
+
+
+3ra Forma normal: Se debe estar en 2da FN y todos los atributos que no son clave pueden ser candidatos a ser clave. Es decir, que los
+                  atributos deben ser dependientes por completo de la llave primaria.
+
+
+
+4ta Forma normal:  obligatoriamente no podemos repetir datos en una tabla, solo tenemos combinaciones únicas y todas las llaves van a poder ser si o si obligatoriamente llaves primarias.
+
+5ta Forma normal: es importante tener 2 tablas que están en 4FN, cada dependencia de union (join) va a estar hecho por claves candidatas y no va puede estar hecho por condiciones que no se vayan a cumplir.
+
+
+Con normalizar hasta la tercera forma es mas que suficiente.
